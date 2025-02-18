@@ -1,0 +1,15 @@
+x-common: &common-config
+  restart: always
+  logging:
+    driver: "json-file"
+    options:
+      max-size: "100m"
+      max-file: "5"
+
+services:
+  api-server:
+    <<: *common-config
+    image: ${DOCKER_IMAGE}:latest
+    container_name: api-server
+    ports:
+      - "8000:8000"
