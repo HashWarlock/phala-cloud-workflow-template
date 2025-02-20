@@ -1,6 +1,24 @@
-# Cloud TEE Starter Template
-
-This is a starter template for building a Cloud TEE application. You can fork this repository to start your own Cloud TEE application.
+<div align="center">
+  <a href="https://github.com/Phala-Network/ai-agent-template-openai">
+    <h1>Cloud TEE Starter Template</h1>
+  </a>
+  <a href="https://platform.openai.com/docs/api-reference">
+    <img height="320" src="assets/banner.jpg" />
+    <br />
+  </a>
+  <p align="center">
+    This is a starter template for building a Cloud TEE application easily with CI/CD instead of manually local build and deploy. You can fork this repository to start your own Cloud TEE application.
+    <br />
+    <a href="https://phalanetwork.notion.site/Phala-Cloud-User-Guide-1700317e04a18018a98ed9ea39b02670"><strong>Explore Phala Cloud User Guide »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Phala-Network/cloud-tee-starter-template/issues">Report Bug</a>
+    ·
+    <a href="https://t.me/+nbhjx1ADG9EyYmI9">Telegram</a>
+    ·
+    <a href="https://discord.gg/phala-network">Discord</a>
+  </p>
+</div>
 
 ## 📋 Prerequisites
 
