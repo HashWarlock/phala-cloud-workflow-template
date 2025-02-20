@@ -66,7 +66,9 @@ If you want to deploy to Phala TEE Cloud manually, you can trigger the workflow 
 ## ✅ Step 3: Verify The Deployment
 After successful workflow run once the workflow is triggered and the deployment is successful, you can verify the deployment on [Phala Cloud Dashboard](https://cloud.phala.network/dashboard).
 
-![image](./assets/image.png)
+<div align="center">
+  <img height="400" src="assets/image.png" />
+</div>
 
 And then you can see the deployment details on the dashboard and visit the endpoint to test the application.
 
