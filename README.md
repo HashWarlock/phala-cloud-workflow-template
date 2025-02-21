@@ -1,8 +1,8 @@
 <div align="center">
-  <a href="https://github.com/Phala-Network/ai-agent-template-openai">
+  <a href="https://github.com/Phala-Network/cloud-tee-starter-template">
     <h1>Cloud TEE Starter Template</h1>
   </a>
-  <a href="https://platform.openai.com/docs/api-reference">
+  <a href="https://cloud.phala.network/">
     <img height="320" src="assets/banner.jpg" />
     <br />
   </a>
