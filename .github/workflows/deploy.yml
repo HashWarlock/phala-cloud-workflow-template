@@ -1,4 +1,4 @@
-name: Build, Push & Deploy to Phala TEE
+name: Build, Push & Deploy to Phala Cloud
 
 on:
   push:
@@ -54,24 +54,17 @@ jobs:
             ${{ env.DOCKER_IMAGE }}:latest
             ${{ env.DOCKER_IMAGE }}:${{ github.sha }}
 
-      - name: Install Tee Cloud CLI
+      - name: Install Phala Cloud CLI
         run: |
-          curl -fsSL https://bun.sh/install | bash
-          echo "$HOME/.bun/bin" >> $GITHUB_PATH
-          export PATH="$HOME/.bun/bin:$PATH"
-          git clone https://github.com/Phala-Network/tee-cloud-cli.git
-          cd tee-cloud-cli
-          bun install
-          bun run build
-          sudo ln -s "$(pwd)/dist/index.js" /usr/local/bin/teecloud
-          cd ..
-
+          sudo apt-get update
+          sudo apt-get install -y nodejs
+          sudo npm install -g phala
       # Configure Phala Cloud API key
       - name: Configure Phala Cloud
         run: |
-          teecloud set-apikey ${{ env.PHALA_CLOUD_API_KEY }}
+          phala auth login ${{ env.PHALA_CLOUD_API_KEY }}
           echo "Verifying Phala Cloud access..."
-          teecloud list-cvms
+          phala cvms ls
 
       - name: Update Docker Compose
         run: |
@@ -80,8 +73,7 @@ jobs:
       - name: Deploy to Phala Cloud
         run: |
           cat api-server/docker-compose.yml
-          teecloud deploy \
+          phala cvms create \
             -n ${{ env.APP_NAME }} \
             -c api-server/docker-compose.yml \
-            -t phala \
-            -m docker-compose
+            --skip-env
